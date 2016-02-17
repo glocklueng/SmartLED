@@ -1,0 +1,280 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/03/2016  21:07:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEIL\C51\BIN\BL51.EXE MAIN.OBJ TO HEKRLED.OMF RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  MAIN.OBJ (MAIN)
+  E:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  E:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  HEKRLED.OMF (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?MAIN
+            DATA    000BH     0002H     UNIT         _DATA_GROUP_
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0014H     UNIT         ?XD?MAIN
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0020H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     07DAH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0076H     UNIT         ?PR?UART_SER?MAIN
+            CODE    0902H     004AH     UNIT         ?PR?MAIN?MAIN
+            CODE    094CH     0019H     UNIT         ?C?LIB_CODE
+            CODE    0965H     0013H     UNIT         ?PR?INITUART?MAIN
+            CODE    0978H     0008H     UNIT         ?PR?_SENDBYTE?MAIN
+            CODE    0980H     0007H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   HEKRLED.OMF (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                  000BH    0002H
+  +--> ?PR?INITUART?MAIN
+  +--> ?PR?_SENDBYTE?MAIN
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/03/2016  21:07:31  PAGE 2
+
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   MODULESTATUS
+   VALID_DATA
+   _HEKRINIT
+   _HEKRMODULECONTROL
+   _HEKRRECVDATAHANDLE
+   _HEKRVALIDDATAUPLOAD
+
+
+
+SYMBOL TABLE OF MODULE:  HEKRLED.OMF (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:088CH         PUBLIC        UART_SER
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0978H         PUBLIC        _SendByte
+  C:0902H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  X:0000H         PUBLIC        Recv_Buffer
+  D:008BH         PUBLIC        TL1
+  C:0965H         PUBLIC        InitUART
+  B:0088H.6       PUBLIC        TR1
+  D:000AH         PUBLIC        Recv_STA
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:000BH         SYMBOL        temp
+  D:000CH         SYMBOL        UserValidLen
+  -------         ENDDO         
+  C:0902H         LINE#         13
+  C:0902H         LINE#         14
+  C:0902H         LINE#         15
+  C:0908H         LINE#         16
+  C:090BH         LINE#         17
+  C:0914H         LINE#         18
+  C:0919H         LINE#         19
+  C:091EH         LINE#         20
+  C:091EH         LINE#         21
+  C:091EH         LINE#         22
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/03/2016  21:07:31  PAGE 3
+
+
+  C:0922H         LINE#         23
+  C:0922H         LINE#         24
+  C:092BH         LINE#         25
+  C:0930H         LINE#         26
+  C:0930H         LINE#         29
+  C:0935H         LINE#         30
+  C:0935H         LINE#         31
+  C:093AH         LINE#         32
+  C:093AH         LINE#         35
+  C:0947H         LINE#         36
+  C:0947H         LINE#         37
+  C:094AH         LINE#         38
+  C:094AH         LINE#         39
+  -------         ENDPROC       MAIN
+  -------         PROC          INITUART
+  C:0965H         LINE#         42
+  C:0965H         LINE#         43
+  C:0965H         LINE#         44
+  C:0968H         LINE#         45
+  C:096BH         LINE#         46
+  C:096EH         LINE#         47
+  C:0971H         LINE#         48
+  C:0973H         LINE#         49
+  C:0975H         LINE#         50
+  C:0977H         LINE#         51
+  -------         ENDPROC       INITUART
+  -------         PROC          _SENDBYTE
+  D:0007H         SYMBOL        dat
+  C:0978H         LINE#         53
+  C:0978H         LINE#         54
+  C:0978H         LINE#         55
+  C:097AH         LINE#         56
+  C:097DH         LINE#         57
+  C:097FH         LINE#         58
+  -------         ENDPROC       _SENDBYTE
+  -------         PROC          UART_SER
+  -------         DO            
+  D:0007H         SYMBOL        Temp
+  D:0008H         SYMBOL        count
+  D:0009H         SYMBOL        flag
+  -------         ENDDO         
+  C:088CH         LINE#         60
+  C:089BH         LINE#         65
+  C:089EH         LINE#         66
+  C:089EH         LINE#         67
+  C:08A0H         LINE#         68
+  C:08A2H         LINE#         70
+  C:08A6H         LINE#         71
+  C:08A6H         LINE#         72
+  C:08ABH         LINE#         73
+  C:08ABH         LINE#         74
+  C:08ADH         LINE#         75
+  C:08B0H         LINE#         76
+  C:08C0H         LINE#         77
+  C:08C0H         LINE#         78
+  C:08C2H         LINE#         80
+  C:08C2H         LINE#         81
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/03/2016  21:07:31  PAGE 4
+
+
+  C:08C9H         LINE#         82
+  C:08C9H         LINE#         83
+  C:08D9H         LINE#         84
+  C:08EAH         LINE#         86
+  C:08EAH         LINE#         87
+  C:08EDH         LINE#         88
+  C:08EDH         LINE#         89
+  C:08EDH         LINE#         90
+  C:08EDH         LINE#         91
+  C:08EFH         LINE#         93
+  C:08EFH         LINE#         94
+  C:08F2H         LINE#         95
+  C:08F5H         LINE#         96
+  C:08F5H         LINE#         97
+  C:08F5H         LINE#         98
+  C:08F5H         LINE#         99
+  -------         ENDPROC       UART_SER
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:094CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  VALID_DATA
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _HEKRINIT
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _HEKRMODULECONTROL
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _HEKRVALIDDATAUPLOAD
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _HEKRRECVDATAHANDLE
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  MODULESTATUS
+    MODULE:  MAIN.OBJ (MAIN)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _HEKRINIT
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 0912H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _HEKRVALIDDATAUPLOAD
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 0917H
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/03/2016  21:07:31  PAGE 5
+
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _HEKRMODULECONTROL
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 091CH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _HEKRRECVDATAHANDLE
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 0927H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  VALID_DATA
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 0931H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MODULESTATUS
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 093BH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MODULESTATUS
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 093DH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MODULESTATUS
+    MODULE:  MAIN.OBJ (MAIN)
+    ADDRESS: 093FH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00E4H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=14.0 xdata=20 code=397
+LINK/LOCATE RUN COMPLETE.  14 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,10 @@
+[hekr_protocol.c]
+VertHead=133
+HorzHead=0
+CaretLine=140
+CaretPos=31
+[main.c]
+VertHead=0
+HorzHead=0
+CaretLine=1
+CaretPos=23
